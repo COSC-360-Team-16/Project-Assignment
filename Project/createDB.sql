@@ -1,7 +1,4 @@
-IF (EXISTS (SELECT * 
-	FROM INFORMATION_SCHEMA.TABLES 
-	WHERE TABLE_NAME = 'Users'))
-BEGIN
+
 	CREATE TABLE Users (
 	userName varchar(100),
 	firstName varchar(100),
@@ -10,4 +7,3 @@ BEGIN
 	email varchar(100),
 	imagePath varchar(255)
 	);
-END
