@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $host = "localhost";
 $database = "project";
 $user = "project"; 
@@ -23,6 +25,7 @@ if($error != null){
 
     if($valid == 1){
       header("Location: MainPage.html");
+      $_SESSION["firstName"] = $row['firstName'];
     }else{
       header("Location: signerror.html");
       

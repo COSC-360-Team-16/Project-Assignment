@@ -18,6 +18,11 @@ if($error != null){
         $email = $_POST["email"];
         $password = $_POST["password"];
 
+        $imagecode = rand(1000,10000)."-".$_FILES["file"]["name"];
+        $temp = $_FILES["files"]["tmp_name"];
+        $uploads_dir = '/images';
+        move_uploaded_file($temp,$uploads_dir.'/'.$imagecode);
+
         $sqluser = "SELECT * FROM users WHERE (username='$uname' OR email='$email');";
 
         $results_su = mysqli_query($connection, $sqluser);
@@ -26,8 +31,8 @@ if($error != null){
         if($row>0){
             header("Location: regerror.html");
         }else{
-            $sql = "INSERT INTO users (firstName,lastName,username, email, password) 
-            VALUES ('$fname','$lname','$uname', '$email', '$password')";
+            $sql = "INSERT INTO users (firstName,lastName,username, email, password, imagePath) 
+            VALUES ('$fname','$lname','$uname', '$email', '$password','$imagecode')";
             $results = mysqli_query($connection, $sql);
             header("Location: signin.html");
         }
