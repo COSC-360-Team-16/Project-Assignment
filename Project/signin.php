@@ -3,7 +3,7 @@
 session_start();
 
 $host = "localhost";
-$database = "project";
+$database = "p360";
 $user = "project"; 
 $password = "c0sc360"; 
 

@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$database = "project";
+$database = "p360";
 $user = "project"; 
 $password = "c0sc360"; 
 
@@ -18,10 +18,9 @@ if($error != null){
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $imagecode = rand(1000,10000)."-".$_FILES["file"]["name"];
-        $temp = $_FILES["files"]["tmp_name"];
-        $uploads_dir = '/images';
-        move_uploaded_file($temp,$uploads_dir.'/'.$imagecode);
+        $path = "./Projects/images";
+        $img = strtolower($_FILES['image']['tmp_name']);
+        move_uploaded_file($_FILES['image']['tmp_name'], $path.$img);
 
         $sqluser = "SELECT * FROM users WHERE (username='$uname' OR email='$email');";
 
@@ -31,8 +30,8 @@ if($error != null){
         if($row>0){
             header("Location: regerror.html");
         }else{
-            $sql = "INSERT INTO users (firstName,lastName,username, email, password, imagePath) 
-            VALUES ('$fname','$lname','$uname', '$email', '$password','$imagecode')";
+            $sql = "INSERT INTO users (firstName,lastName,username, email, password, profilePic) 
+            VALUES ('$fname','$lname','$uname', '$email', '$password','$img')";
             $results = mysqli_query($connection, $sql);
             header("Location: signin.html");
         }
