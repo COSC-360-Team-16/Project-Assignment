@@ -77,7 +77,8 @@ CREATE TABLE `Users` (
   `lastName` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `profilePic` varchar(255) NOT NULL 'images/profilePictures/default.png'
+  `profilePic` varchar(255) NOT NULL DEFAULT 'images/profilePictures/default.png',
+  `administrator` boolean NOT NULL DEFAULT TRUE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -126,6 +127,8 @@ ALTER TABLE `Comments`
 ALTER TABLE `Posts`
   ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
+
+INSERT INTO users (userName, firstName, lastName, password, email, administrator) VALUES ('admin', 'admin', 'admin', 'admin', 'admin@admin.com', TRUE);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
