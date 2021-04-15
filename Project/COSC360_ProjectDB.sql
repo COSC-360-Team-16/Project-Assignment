@@ -77,7 +77,7 @@ CREATE TABLE `Users` (
   `lastName` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `profilePic` longblob NOT NULL
+  `profilePic` varchar(255) NOT NULL 'images/profilePictures/default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

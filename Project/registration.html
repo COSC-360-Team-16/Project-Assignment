@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<form  method="POST" action="register.php" name="regform" onsubmit="return validateForm()" enctype=”multipart/form-data>
+<form  method="POST" action="register.php" name="regform" onsubmit="return validateForm()">
     <div class="register">
             <h1>Account Registration Form</h1>
             <div id="image">
@@ -40,6 +40,9 @@
            
                 <label>Password: </label>
                 <input type="password" name="password" id="password" placeholder="Choose Password">
+				
+				<label>Profile Picture: </label>
+				<input type="file" name="profilePicture" id="profilePicture"></input>
 
 
                 <div class="checkrules">

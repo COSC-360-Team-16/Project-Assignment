@@ -42,7 +42,7 @@ form{
 .submit:hover, .clear:hover{
     background-color: #ddd;
 }
-#password, #email, #fname, #lname, #confirmpassword, #uname {
+#password, #email, #fname, #lname, #confirmpassword, #uname, #profilePicture {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -57,7 +57,7 @@ form{
   
     
   }
-#password:focus, #email:focus, #fname:focus, #lname:focus, #confirmpassword:focus, #uname:focus {
+#password:focus, #email:focus, #fname:focus, #lname:focus, #confirmpassword:focus, #uname:focus 	{
     background-color: #ddd;
     outline: none;
   }

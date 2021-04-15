@@ -3,7 +3,7 @@
 session_start();
 
 $host = "localhost";
-$database = "p360";
+$database = "project";
 $user = "project"; 
 $password = "c0sc360"; 
 
@@ -16,9 +16,8 @@ if($error != null){
   if(isset($_POST['uname'],$_POST['password'])){
     $uname = $_POST["uname"];
     $password = $_POST["password"];
-
-    $sqluser = "SELECT * FROM Users WHERE (userName='$uname' AND password='$password');";
-
+	$hashed = md5($password);
+    $sqluser = "SELECT * FROM users WHERE (username='$uname' AND password='$hashed');";
     $results_su = mysqli_query($connection, $sqluser);
     $row = mysqli_fetch_assoc($results_su);
     $valid = mysqli_num_rows($results_su);

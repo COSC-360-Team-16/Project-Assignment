@@ -7,6 +7,7 @@ function validateForm(){
      var check = document.getElementById("rules");
      var input = document.getElementsByTagName("input");
      var cpass = document.getElementById("confirmpassword");
+	 var profpic = document.getElementById("profilePicture");
      var message ="";
 
      for(var i=0; i<input.length;i++){
@@ -18,7 +19,7 @@ function validateForm(){
          }
      }
 
-    if(uname.value === "" || fname.value === "" || lname.value === "" || email.value === "" || pass.value === "" && !check.checked){
+    if(uname.value === "" || fname.value === "" || lname.value === "" || email.value === "" || pass.value === ""  && !check.checked){
         alert("Please fill in all highlighted fields");
         document.getElementById("checkerror").innerHTML ="*Please Checkbox before continuing";
         return false;

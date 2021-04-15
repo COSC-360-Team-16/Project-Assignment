@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <link href="css/registration.css" rel="stylesheet">
+    <script>
+	window.onload = function() {
+		var mainForm = document.getElementById("MainForm");
+		mainForm.onsubmit = function checkForEmail(e) {
+			var email = document.getElementById("email");
+			var input = document.getElementsByTagName("input");
+			var password = document.getElementById("password");
+			var passcheck = document.getElementById("confirmpassword");
+			for(var i=0; i<input.length;i++){
+				if(input[i].value == ""){
+					input[i].style.backgroundColor ="yellow";
+					
+				}else{
+				   input[i].style.backgroundColor ="";
+				}
+			}
+			if(email.value === "" || passcheck.value === "" || password.value === ""){
+				alert("Please fill in all highlighted fields");
+				e.preventDefault();
+			}
+			if (password.value != passcheck.value) {
+				alert("Passwords do not match");
+				e.preventDefault();
+			}
+		};
+	}
+	</script>
+</head>
+<body>
+<div id="top">
+	<a id="main" href="MainPage.html">Return to Home page</a>
+</div>
+<form  method="POST" action="recoverAccount.php" name="regform" id="MainForm">
+    <div class="register">
+            <h1>Recover Account</h1>
+			<label for="email">Enter your email</label>
+			<input type="email" name="email" id="email" placeholder="Enter Email">
+			<label for="password">Enter your new password</label>
+			<input type="password" name="password" id="password"></input>
+			<label for="confirmpassword">Confirm your new password</label>
+			<input type="password" name="confirmpassword" id="confirmpassword"></input>
+			<input type="submit" class="submit" name="submitreg" value="Click to change your password" />       
+
+    </div>
+    <div id="image">
+        <img src = "images/logo.PNG" alt = "logo" height="300px" width="300px">
+    </div>
+</form>
+</body>
+</html>
