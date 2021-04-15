@@ -11,7 +11,7 @@ if($error != null){
     $output = "<p>Unable to connect to database!</p>";
     exit($output);
 }else{
-    if(isset($_POST['fname'],$_POST['lname'],$_POST['uname'],$_POST['email'],$_POST['password'] )){
+    if(isset($_POST['submitreg'])){
         $fname = $_POST["fname"];
         $lname = $_POST["lname"];
         $uname = $_POST["uname"];
@@ -21,8 +21,9 @@ if($error != null){
         $path = "./Projects/images";
         $img = strtolower($_FILES['image']['tmp_name']);
         move_uploaded_file($_FILES['image']['tmp_name'], $path.$img);
-
-        $sqluser = "SELECT * FROM users WHERE (username='$uname' OR email='$email');";
+       
+       
+        $sqluser = "SELECT * FROM Users WHERE (userName='$uname' OR email='$email');";
 
         $results_su = mysqli_query($connection, $sqluser);
         $row = mysqli_fetch_assoc($results_su);
@@ -30,8 +31,8 @@ if($error != null){
         if($row>0){
             header("Location: regerror.html");
         }else{
-            $sql = "INSERT INTO users (firstName,lastName,username, email, password, profilePic) 
-            VALUES ('$fname','$lname','$uname', '$email', '$password','$img')";
+            $sql = "INSERT INTO Users (firstName,lastName,userName, email, password, profilePic) 
+            VALUES ('$fname','$lname','$uname', '$email', '$password', '$img')";
             $results = mysqli_query($connection, $sql);
             header("Location: signin.html");
         }

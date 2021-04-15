@@ -17,7 +17,7 @@ if($error != null){
     $uname = $_POST["uname"];
     $password = $_POST["password"];
 
-    $sqluser = "SELECT * FROM users WHERE (username='$uname' AND password='$password');";
+    $sqluser = "SELECT * FROM Users WHERE (userName='$uname' AND password='$password');";
 
     $results_su = mysqli_query($connection, $sqluser);
     $row = mysqli_fetch_assoc($results_su);
