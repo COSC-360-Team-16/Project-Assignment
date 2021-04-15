@@ -90,7 +90,7 @@ if($error != null){
             VALUES ('$fname','$lname','$uname', '$email', '$hashed', $filePath)";
 			}
             $success = mysqli_query($connection, $sql);
-            //header("Location: signin.html");
+            header("Location: signin.html");
         }
 
 
