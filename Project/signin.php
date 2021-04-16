@@ -16,14 +16,14 @@ if($error != null){
   if(isset($_POST['uname'],$_POST['password'])){
     $uname = $_POST["uname"];
     $password = $_POST["password"];
-	$hashed = md5($password);
+	  $hashed = md5($password);
     $sqluser = "SELECT * FROM users WHERE (username='$uname' AND password='$hashed');";
     $results_su = mysqli_query($connection, $sqluser);
     $row = mysqli_fetch_assoc($results_su);
     $valid = mysqli_num_rows($results_su);
 
     if($valid == 1){
-      header("Location: MainPage.html");
+      header("Location: MainPageLogin.html");
       $_SESSION["firstName"] = $row['firstName'];
     }else{
       header("Location: signerror.html");
