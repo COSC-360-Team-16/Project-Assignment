@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head lang = "en">
+        <meta charset="UTF-8">
+        <title>COSC360Project</title>
+        <link rel="stylesheet" href="gameinformation.css" />
+    </head>
+    <body>
+        <div class = "header_wrap">
+            <div class="header_top">
+                <div class center>
+                    <div class="home">
+                        <a href = "../MainPage.php">Home</a>
+                    </div>
+                    <div class="head_top_rt" id = "users">
+                        <img src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
+								<?php
+								if (session_status() === PHP_SESSION_NONE) {
+									session_start();
+								}
+								$loggedOn = $_SESSION["uname"];
+								if (!empty($loggedOn)){
+									echo '<a href="../profilePage.php" class="login">My Profile</a>';
+								} else {
+									echo '<a href = "../signin.html" class = "login">Login</a>
+			<a href = "../registration.html" class = "register">Register</a>';
+								}
+							   ?>
+                    </div>
+                </div>
+            </div>
+        <h1 style = "text-align: center;">Green Hell</h1> 
+        <p>Green Hell is a survival video game developed and published by Creepy Jar. The game takes place in the Amazon rainforest.</p>  
+        <img src = "picture/green1.jpg" alt = "Green Hell" height="350px" width="auto">
+        <p>The game is played in first-person perspective in single player mode or in coop multiplayer. It is an open world simulation in which the player has to ensure their survival by collecting raw materials and food as well as crafting objects and cabins. The player starts in a lone jungle camp without any further context. The environment of the game changes dynamically and influences the physical and psychological state of the character, e.g. in the form of hallucinations. Furthermore, the player must pay attention to a balanced diet, which is explained by a smartwatch. The player must sleep enough and must maintain their health by e.g. avoiding contact with poisonous animals or unsavory food and avoid injuries. To restore health, the player can make medicine and bandages. A compass and GPS serve as navigation aids.</p>
+        <img src = "picture/green2.jpg" alt = "Green Hell" height="500px" width="auto">
+        <div class = "footer">
+            <p><a href = "../aboutus.php">About us</a></p>
+        </div>
+    </body>
+</html>

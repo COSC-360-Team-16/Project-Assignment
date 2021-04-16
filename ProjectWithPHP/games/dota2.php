@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head lang = "en">
+        <meta charset="UTF-8">
+        <title>COSC360Project</title>
+        <link rel="stylesheet" href="gameinformation.css" />
+    </head>
+    <body>
+        <div class = "header_wrap">
+            <div class="header_top">
+                <div class center>
+                    <div class="home">
+                        <a href = "../MainPage.php">Home</a>
+                    </div>
+                    <div class="head_top_rt" id = "users">
+                        <img src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
+								<?php
+								if (session_status() === PHP_SESSION_NONE) {
+									session_start();
+								}
+								$loggedOn = $_SESSION["uname"];
+								if (!empty($loggedOn)){
+									echo '<a href="../profilePage.php" class="login">My Profile</a>';
+								} else {
+									echo '<a href = "../signin.html" class = "login">Login</a>
+			<a href = "../registration.html" class = "register">Register</a>';
+								}
+							   ?>
+                    </div>
+                </div>
+            </div>
+        <h1 style = "text-align: center;">Dota2</h1> 
+        <p>Dota 2 is a multiplayer online battle arena (MOBA) video game developed and published by Valve. The game is a sequel to Defense of the Ancients (DotA), which was a community-created mod for Blizzard Entertainment's Warcraft III: Reign of Chaos. Dota 2 is played in matches between two teams of five players, with each team occupying and defending their own separate base on the map. Each of the ten players independently controls a powerful character, known as a "hero", who all have unique abilities and differing styles of play. During a match player collect experience points and items for their heroes to successfully defeat the opposing team's heroes in player versus player combat. A team wins by being the first to destroy the other team's "Ancient", a large structure located within their base.</p>  
+        <img src = "picture/dota1.jpg" alt = "Cyberpunk" height="350px" width="auto">
+        <p>Development of Dota 2 began in 2009 when IceFrog, lead designer of Defense of the Ancients, was hired by Valve to create a modernized remake for them in the Source game engine. It was released for Microsoft Windows, OS X, and Linux via the digital distribution platform Steam in July 2013, following a Windows-only open beta phase that began two years prior. The game is fully free-to-play with no heroes or any other gameplay element needing to be bought or otherwise unlocked. To maintain it, Valve supports the game as a service, selling loot boxes and a battle pass subscription system called Dota Plus that offer non-gameplay altering virtual goods in return, such as hero cosmetics and audio replacement packs.</p>
+        <img src = "picture/dota2.jpg" alt = "Cyberpunk" height="500px" width="auto">
+        <div class = "footer">
+            <p><a href = "../aboutus.php">About us</a></p>
+        </div>
+    </body>
+</html>
