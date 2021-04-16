@@ -42,8 +42,7 @@
 					if (session_status() === PHP_SESSION_NONE) {
 						session_start();
 					}
-					$loggedOn = $_SESSION["uname"];
-					if (!empty($loggedOn)){
+					if (isset($_SESSION["uname"])){
 						echo '<a href="profilePage.php" class="login">My Profile</a>';
 					} else {
 						echo '<a href = "signin.html" class = "login">Login</a><a href = "registration.html" class = "register">Register</a>';
@@ -86,7 +85,7 @@
 			session_start();
 		}
 		$loggedOn = $_SESSION["uname"];
-		if (!empty($loggedOn)){		
+		if (!isset($_SESSION["uname"])){		
 			$host = "localhost";
 			$database = "project";
 			$user = "project"; 

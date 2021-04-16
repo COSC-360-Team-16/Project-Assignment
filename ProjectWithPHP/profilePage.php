@@ -15,8 +15,7 @@
                    <img src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
 				   <?php
 					session_start();
-					$loggedOn = $_SESSION["uname"];
-					if (!empty($loggedOn)){
+					if (isset($_SESSION["uname"])){
 						echo '<a href="profilePage.php" class="login">My Profile</a>';
 					} else {
 						echo '<a href = "signin.html" class = "login">Login</a><a href = "registration.html" class = "register">Register</a>';
@@ -59,7 +58,7 @@
 			session_start();
 		}
 		$loggedOn = $_SESSION["uname"];
-		if (!empty($loggedOn)){		
+		if (!isset($_SESSION["uname"])){		
 			$host = "localhost";
 			$database = "project";
 			$user = "project"; 
