@@ -128,7 +128,7 @@ ALTER TABLE `Posts`
   ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `Users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
-INSERT INTO users (userName, firstName, lastName, password, email, administrator) VALUES ('admin', 'admin', 'admin', 'admin', 'admin@admin.com', TRUE);
+INSERT INTO users (userName, firstName, lastName, password, email, administrator) VALUES ('admin', 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin.com', TRUE);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
