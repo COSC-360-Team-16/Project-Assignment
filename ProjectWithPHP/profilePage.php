@@ -58,7 +58,7 @@
 			session_start();
 		}
 		$loggedOn = $_SESSION["uname"];
-		if (!isset($_SESSION["uname"])){		
+		if (isset($_SESSION["uname"])){		
 			$host = "localhost";
 			$database = "project";
 			$user = "project"; 

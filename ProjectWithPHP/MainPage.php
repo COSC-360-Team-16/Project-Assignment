@@ -13,7 +13,7 @@
        <div class="header_top">
            <div class center>
                <div class="home">
-                   <a href = "MainPage.html">Home</a>
+                   <a href = "MainPage.php">Home</a>
                </div>
                <div class="head_top_rt" id = "users">
                    <img src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
@@ -32,7 +32,7 @@
        </div>
        <div class = "header">
            <div class = "center">
-            <a href = "MainPage.html">
+            <a href = "MainPage.php">
                 <img src = "images/logo.PNG" alt = "logo" height="130px" width="130px">
             </a>
             <div class = "search">

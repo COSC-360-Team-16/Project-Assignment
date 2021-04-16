@@ -84,8 +84,9 @@
 		if (session_status() === PHP_SESSION_NONE) {
 			session_start();
 		}
-		$loggedOn = $_SESSION["uname"];
-		if (!isset($_SESSION["uname"])){		
+		
+		if (isset($_SESSION["uname"])){
+			$loggedOn = $_SESSION["uname"];			
 			$host = "localhost";
 			$database = "project";
 			$user = "project"; 
@@ -109,7 +110,7 @@
 					$users = "SELECT userName, email FROM users;";
 					$result = mysqli_query($connection, $users);
 					while ($row = mysqli_fetch_assoc($result)){
-						echo "<tr><td>".$row['userName']."</td><td>".$row['email']."</td></tr>";
+						echo "<tr><td>".$row['userName']."</td><td>".$row['email']."</td><td><a href='deleteUser.php>Delete User</a></td></tr>";
 					}
 					mysqli_free_result($result);
 					echo "</table>";
