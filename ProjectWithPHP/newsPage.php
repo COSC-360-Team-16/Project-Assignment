@@ -14,7 +14,9 @@
                <div class="head_top_rt" id = "users">
                    <img src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
 				   <?php
-					session_start();
+					if (session_status() === PHP_SESSION_NONE) {
+						session_start();
+					}
 					$loggedOn = $_SESSION["uname"];
 					if (!empty($loggedOn)){
 						echo '<a href="profilePage.php" class="login">My Profile</a>';
@@ -31,8 +33,7 @@
                 <img src = "images/logo.PNG" alt = "logo" height="130px" width="130px">
             </a>
             <div class = "search">
-                <form action = " " method = "get" target = "_blank" autocomplete= "off" id="sgames">
-                    <input type = "text" placeholder="GTA 5" name = "search1">
+                <input type = "text" id = "myInput" placeholder="GTA 5" name = "search1">
                     <button type="submit" class="but" style="background: rgb(0, 0, 0);"><i></i></button>
             </div>
            </div>
@@ -41,12 +42,12 @@
        <div class="nav">
         <div class="center">
             <ul>
-                <li><a href="">News<span class="hide"></span></a></li>
-                <li><a href="">Games<span class="hide"></span></a></li>
-                <li><a href="">Forum<span class="hide"></span></a></li>
+                <li><a href="newsPage.php">News<span class="hide"></span></a></li>
+                <li><a href="games.php">Games<span class="hide"></span></a></li>
+                <li><a href="forum.html">Forum<span class="hide"></span></a></li>
             </ul>
             <ol>
-                <li><a href="" class="as">Home</a></li>
+                <li><a href="MainPage.php" class="as">Home</a></li>
                 <li><a href="">Single-Player Game</a></li>
                 <li><a href="">Online Game</a></li>
             </ol>
@@ -75,11 +76,11 @@
             <p>Fall Guys: Ultimate Knockout is a platform battle royale game developed by Mediatonic and published by Devolver Digital. It was released for Microsoft Windows and PlayStation 4 on 4 August 2020. The game is planned for release on Nintendo Switch, Xbox One, and Xbox Series X/S in mid 2021.</p>
             <img id="postimg" src="images/fallguys1.jpg" alt="Fall Guys"></a>
             <img id="postimg" src="images/fallguys2.jpg" alt="Fall Guys" width="400"></a>
-            <p>Up to 60 players control jelly bean-like creatures and compete against each other in a series of challenges, such as obstacle courses or tag. Many different courses have been added since the game was first released; the minority are team-based, while many require not falling into lava on a spinning, floating platform with obstacles designed to knock players in and waiting for a specified number of others to be eliminated, but most are obstacle courses that involve players racing to get to the finish line as soon as possible, lest they are annihilatedâ€”starting at 40, there is a limited number of players that can qualify, and with each round as the game progresses, the number lowers, eventually getting down to one, the player who is crowned the winner.</p>
+            <p>Up to 60 players control jelly bean-like creatures and compete against each other in a series of challenges, such as obstacle courses or tag. Many different courses have been added since the game was first released; the minority are team-based, while many require not falling into lava on a spinning, floating platform with obstacles designed to knock players in and waiting for a specified number of others to be eliminated, but most are obstacle courses that involve players racing to get to the finish line as soon as possible, lest they are annihilated—starting at 40, there is a limited number of players that can qualify, and with each round as the game progresses, the number lowers, eventually getting down to one, the player who is crowned the winner.</p>
         </div>  
         <div id = 'post'>
             <h2 id='postheader'>Assasin's Creed Odyssey</h2>
-            <p>Assassin's Creed Odyssey is an action role-playing video game developed by Ubisoft Quebec and published by Ubisoft. It is the eleventh major installment, and 21st overall, in the Assassin's Creed series and the successor to 2017's Assassin's Creed Origins. Set in the years 431â€“422 BC, the plot tells a mythological history of the Peloponnesian War between Athens and Sparta. Players control a male or female mercenary who fights on both sides of the conflict as they attempt to find their family. </p>
+            <p>Assassin's Creed Odyssey is an action role-playing video game developed by Ubisoft Quebec and published by Ubisoft. It is the eleventh major installment, and 21st overall, in the Assassin's Creed series and the successor to 2017's Assassin's Creed Origins. Set in the years 431–422 BC, the plot tells a mythological history of the Peloponnesian War between Athens and Sparta. Players control a male or female mercenary who fights on both sides of the conflict as they attempt to find their family. </p>
             <img id="postimg" src="images/AC1.png" alt="Cyberpunk2077"></a>
             <img id="postimg" src="images/AC2.jpg" alt="Cyberpunk2077"></a>
             <p>Assassin's Creed Odyssey was released worldwide for Microsoft Windows, PlayStation 4, Xbox One, and Nintendo Switch on October 5, 2018, with a Stadia version launching alongside the service in 2019.</p>
@@ -105,5 +106,8 @@
         <div id = 'post'>News</div>  
         <div id = 'post'>More news</div>  
         <div id = 'post'>Even more news</div> 
+</div>
+<div class = "footer">
+    <p><a href = "aboutus.html">About us</a></p>
 </div>
 </body>

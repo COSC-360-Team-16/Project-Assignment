@@ -19,8 +19,10 @@
 			  txtValue = td.textContent || td.innerText;
 			  if (txtValue.toUpperCase().indexOf(filter) > -1) {
 				tr[i].style.display = "";
+				console.log("found a match");
 			  } else {
 				tr[i].style.display = "none";
+				console.log("noMatch");
 			  }
 			}
 		  }

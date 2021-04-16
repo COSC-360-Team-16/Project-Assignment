@@ -13,8 +13,15 @@
                </div>
                <div class="head_top_rt" id = "users">
                    <img src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
-                   <a href = "signin.html" class = "login">Login</a>
-                   <a href = "register.html" class = "register">Register</a>
+				   <?php
+					session_start();
+					$loggedOn = $_SESSION["uname"];
+					if (!empty($loggedOn)){
+						echo '<a href="profilePage.php" class="login">My Profile</a>';
+					} else {
+						echo '<a href = "signin.html" class = "login">Login</a><a href = "registration.html" class = "register">Register</a>';
+					}
+				   ?>
                </div>
            </div>
        </div>
@@ -48,7 +55,9 @@
    </div>
    <div class='profile'>
    <?php
-		session_start();
+		if (session_status() === PHP_SESSION_NONE) {
+			session_start();
+		}
 		$loggedOn = $_SESSION["uname"];
 		if (!empty($loggedOn)){		
 			$host = "localhost";
@@ -69,7 +78,7 @@
 				$profile = $row['profilePic'];
 				$administrator = $row['administrator'];
 				if ($administrator) {
-					echo "<img id='profileImage' src='$profile' alt='profilePicture' width='100' height='100'/><h1>$uName</h1><p><a href=''>Admin tools</a></p><p id='posts'>Posts placeholder</p>";
+					echo "<img id='profileImage' src='$profile' alt='profilePicture' width='100' height='100'/><h1>$uName</h1><p><a href='Admin.php'>Admin tools</a></p><p id='posts'>Posts placeholder</p>";
 				} else {
 					echo "<img id='profileImage' src='$profile' alt='profilePicture' width='100' height='100'/><h1>$uName</h1><p id='posts'>Posts placeholder</p>";
 				}

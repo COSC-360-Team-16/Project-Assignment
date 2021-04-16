@@ -21,7 +21,9 @@
                <div class="head_top_rt" id = "users">
                    <img src = "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
 				   <?php
-					session_start();
+					if (session_status() === PHP_SESSION_NONE) {
+						session_start();
+					}
 					$loggedOn = $_SESSION["uname"];
 					if (!empty($loggedOn)){
 						echo '<a href="profilePage.php" class="login">My Profile</a>';
@@ -48,9 +50,9 @@
        <div class="nav">
         <div class="center">
             <ul>
-                <li><a href=" ">News<span class="hide"></span></a></li>
-                <li><a href=" ">Games<span class="hide"></span></a></li>
-                <li><a href=" ">Forum<span class="hide"></span></a></li>
+                <li><a href="newsPage.php">News<span class="hide"></span></a></li>
+                <li><a href="games.php">Games<span class="hide"></span></a></li>
+                <li><a href="forum.php">Forum<span class="hide"></span></a></li>
             </ul>
             <ol>
                 <li><a href="" class="as">Home</a></li>
