@@ -188,3 +188,11 @@ a{
     color: white;
     text-decoration: none;
   }
+#content p {
+    text-align: center;
+    font-size: 30px;
+}
+#content p a{
+    text-align: center;
+    font-size: 30px;
+}

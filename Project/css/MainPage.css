@@ -226,6 +226,7 @@ a {
     position: relative;
 }
 .body2 .Min2_L{
+    position: absolute;
     float: left;
     width: 412px;
     margin-left: 20px;
@@ -250,7 +251,7 @@ a {
     position: relative;
     margin-top: 50px;
     float: left;
-    margin-left: 150px;
+    margin-left: 500px;
 }
 .body2 .Min2_R .rtwrap{
     width : 100%;
@@ -265,12 +266,13 @@ a {
     line-height: auto;
     overflow: hidden;
     color: red;
-    font-size: 60px;
+    font-size: 30px;
     margin-top: 8px;
     font-weight: bold;
     text-align: center;
 }
 .body2 .Min2_R .Listwrap{
+    position: relative;
     width: 100%;
     overflow: hidden;
 }
@@ -282,39 +284,26 @@ a {
 .body2 .Min2_R .Listwrap .lis ul{
     width: 100%;
     overflow: hidden;
-    margin: 6px 0;
+
 }
 .body2 .Min2_R .Listwrap .lis ul li{
     width: 100%;
     overflow: hidden;
-    height: 30px;
-    line-height: 30px;
-    margin: 2px 0;
+    height: auto;
+    line-height: auto;
     float: left;
+    padding-bottom: 10px;
 }
-.body2 .Min2_R .Listwrap .lis ul li i{
-    display: inline-block;
-    float: left;
-    width: 3px;
-    height: 3px;
-    margin: 15px 5px 0 0;
-    border-radius: 50%;
 
-}
 .body2 .Min2_R .Listwrap .lis ul li a{
-    width: 340px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 14px;
+    width: 100%;
+    height: auto;
+    line-height: auto;
+    font-size: 20px;
     color: #111;
     overflow: hidden;
 }
-.body2 .Min2_R .Listwrap .lis ul li span{
-    float: right;
-    color: #959595;
-    font-family: Arial;
-    font-size: 14px;
-}
+
 
 .footer {
     position: fixed;
