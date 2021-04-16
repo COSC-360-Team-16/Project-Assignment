@@ -42,9 +42,9 @@ Requirements list:<br/>
 	</ol>
 </ol>
 
-**User Walkthrough
+**User Walkthrough**
 
-***Account creation & Login
+***Account creation & Login***
 
 When the user first reaches types in the url for the web page, they will be greeted with the homepage that contains all the information regarding popular single-player and online games.
 
@@ -59,7 +59,7 @@ Once the registration process is complete, the user will be prompted to sign in 
 After the user has logged in with a previous account or has created a new account the user can begin using the websites many different features which includes browsing the single player or multiplayer games that are displayed, being able to access the news section and the forums page where all the discussions are occuring.
 
 
-***Administrator
+***Administrator***
 
 The administrator is a user that has special administrative functionalities which normal visitors and registered users do not have. The administrator can sign in to their account by clicking “login” at the header on the top right and will be prompted with the sign in form. 
 
@@ -70,7 +70,7 @@ On the forums page, the administrator can have the options to view and remove po
 To access administrator tools and functionality, the user will have to navigate to the profile page where the user can select “admin tools” which then shows the tools and options the administrator has and can use. 
 
 
-***Homepage
+***Homepage***
 
 On the homepage, there are login and register options near the top right where existing users or new users can create an account and sign in.
 
@@ -84,7 +84,7 @@ Towards the left is a panel which displays the top 10 most popular games which u
 
 When the user is navigating other pages, the user can click on the icon logo towards the top left of every page where the user will be redirected back to the homepage.
 
-***Forums page
+***Forums page***
 
 Registered users and administrators can create, edit and remove posts. The user can create a post by clicking onto the textbox near the top and type in their desired content. Then the user can click on “Post” to officially place their post onto the forum.
 
