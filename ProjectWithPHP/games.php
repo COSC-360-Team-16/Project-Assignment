@@ -19,7 +19,7 @@
 						session_start();
 					}
 					if (isset($_SESSION["uname"])){
-						echo '<a href="profilePage.php" class="login">My Profile</a>';
+						echo '<a href="profilePage.php" class="login">My Profile</a><a href="logout.php">Log Out</a>';
 					} else {
 						echo '<a href = "signin.html" class = "login">Login</a><a href = "registration.html" class = "register">Register</a>';
 					}

@@ -43,7 +43,7 @@
 						session_start();
 					}
 					if (isset($_SESSION["uname"])){
-						echo '<a href="profilePage.php" class="login">My Profile</a>';
+						echo '<a href="profilePage.php" class="login">My Profile</a><a href="logout.php">Log Out</a>';
 					} else {
 						echo '<a href = "signin.html" class = "login">Login</a><a href = "registration.html" class = "register">Register</a>';
 					}
@@ -110,13 +110,15 @@
 					$users = "SELECT userName, email FROM users;";
 					$result = mysqli_query($connection, $users);
 					while ($row = mysqli_fetch_assoc($result)){
-						echo "<tr><td>".$row['userName']."</td><td>".$row['email']."</td><td><a href='deleteUser.php>Delete User</a></td></tr>";
+						echo "<tr><td>".$row['userName']."</td><td>".$row['email']."</td><td><a href='deleteUser.php?uName=".$row['userName']."'>Delete User</a></td></tr>";
 					}
 					mysqli_free_result($result);
 					echo "</table>";
 				} else {
+					mysqli_close($connection);
 					header("Location: MainPage.php");
 				}
+				mysqli_close($connection);
 			}
 		} else {
 			header("Location: signin.html");

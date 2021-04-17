@@ -78,7 +78,7 @@ CREATE TABLE `Users` (
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `profilePic` varchar(255) NOT NULL DEFAULT 'images/profilePictures/default.png',
-  `administrator` boolean NOT NULL DEFAULT TRUE
+  `administrator` boolean NOT NULL DEFAULT FALSE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
